@@ -5,18 +5,23 @@ import (
 	"strconv"
 )
 
-func countelements(a []int) {
+func countelements(arr []int) {
 	var m = make(map[string]int)
-	for i := 0; i < len(a); i++ {
-		if _, ok := m[strconv.Itoa(a[i]-1)]; ok {
-			fmt.Println(a[i] - 1)
-		}
-		m[strconv.Itoa(a[i])] = 1
+	var count int
+	for i := 0; i < len(arr); i++ {
+		m[strconv.Itoa(arr[i])] = 1
 	}
+
+	for i := 0; i < len(arr); i++ {
+		if _, ok := m[strconv.Itoa(arr[i]+1)]; ok {
+			count++
+		}
+	}
+	fmt.Println(count)
 	fmt.Println(m)
 }
 
 func main() {
-	var i = []int{1, 1, 3, 3, 5, 5, 7, 7}
+	var i = []int{1, 3, 2, 3, 5, 0}
 	countelements(i)
 }
