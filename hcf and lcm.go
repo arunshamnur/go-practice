@@ -28,7 +28,7 @@ func findLcm(n1 int, n2 int) {
 		highest = n2
 	}
 
-	for highest > 0 {
+	for {
 		if highest%n1 == 0 && highest%n2 == 0 {
 			lcm = highest
 			break

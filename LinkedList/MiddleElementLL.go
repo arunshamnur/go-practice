@@ -2,10 +2,6 @@ package main
 
 import "fmt"
 
-package main
-
-import "fmt"
-
 type Node struct {
 	data int
 	link *Node
@@ -61,8 +57,6 @@ func (l *LL) findMiddleLength() int {
 	}
 	return 0
 }
-
-
 
 func main() {
 	ll := new(LL)
